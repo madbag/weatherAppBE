@@ -19,7 +19,7 @@ app.post("/", async (req, res) => {
     { role: "system", content: "You are a helpful assistant." },
     {
       role: "user",
-      content: `Today's weather forecast, clothes recommendation and food in Gen Z language: ${text}`,
+      content: `Today's weather forecast, clothes recommendation and food in Gen Z language, 50 words and some emoticon: ${text}`,
     },
   ];
   try {
