@@ -14,7 +14,7 @@ app.use(cors());
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 app.post("/", async (req, res) => {
-  const text = req.body.text; // Assuming weather data is sent along with text
+  const text = req.body.text; 
   const messages = [
     { role: "system", content: "You are a helpful assistant." },
     {
