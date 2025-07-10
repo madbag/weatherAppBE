@@ -5,11 +5,11 @@ import express from "express";
 import cors from "cors";
 import chatRoutes from "./routes/chat.js";
 
-
 const app = express();
 const PORT = process.env.PORT || 8000;
 
 const allowedOrigins = [process.env.CLIENT_URL, "http://localhost:5173",];
+
 app.use(
   cors({
     origin: function (origin, callback) {
