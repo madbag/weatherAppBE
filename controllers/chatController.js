@@ -2,8 +2,6 @@ import OpenAI from "openai";
 import dotenv from "dotenv";
 dotenv.config();
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-console.log("OPENAI KEY:", openai);
-
 
 export const getChatResponse = async (req, res) => {
   const text = req.body.text;
@@ -22,6 +20,7 @@ export const getChatResponse = async (req, res) => {
       model: "gpt-3.5-turbo",
     });
 
+    
     res.status(200).send(completion.choices[0]);
   } catch (error) {
     console.error("ChatGPT Error:", error);
