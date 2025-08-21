@@ -23,13 +23,15 @@ app.use(
         callback(new Error("Not allowed by CORS"));
       }
     },
-    methods: ["GET", "POST"],
-    allowedHeaders: ["Content-Type"],
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
 //middleware
 app.use(express.json());
+
+app.options("*", cors());
 
 //routes
 app.use("/", chatRoutes);
