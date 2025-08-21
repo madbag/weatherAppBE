@@ -9,7 +9,7 @@ export const getChatResponse = async (req, res) => {
     { role: "system", content: "You are a helpful assistant." },
     {
       role: "user",
-      content: `Roast today's weather forecast, clothes recommendation, and food in gen-z gender appropriate language (within 50 words and some emojis) don't use hashtags: ${text}`,
+      content: `Current weather forecast, clothes recommendation, and food in gen-z gender appropriate language (within 50 words and some emojis) don't use hashtags: ${text}`,
     },
   ];
 
