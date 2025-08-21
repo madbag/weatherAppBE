@@ -28,7 +28,7 @@ export const getChatResponse = async (req, res) => {
 
     const data = await response.json();
 
-    res.status(200).send({ message: data.choices[0].message });
+    res.status(200).send({ message: data.choices[0].message.content });
   } catch (error) {
     console.error("OpenRouter Error:", error);
     res.status(500).send({ error: "Internal Server Error" });
