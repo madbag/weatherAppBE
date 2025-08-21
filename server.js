@@ -11,7 +11,6 @@ const PORT = process.env.PORT || 8000;
 const allowedOrigins = [
   process.env.CLIENT_URL,
   "http://localhost:5173",
-  "http://localhost:8000",
 ];
 
 
@@ -24,7 +23,7 @@ app.use(
         callback(new Error("Not allowed by CORS"));
       }
     },
-    methods: ["POST"],
+    methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"],
   })
 );
