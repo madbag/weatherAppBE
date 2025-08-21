@@ -9,7 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 
 const allowedOrigins = [
-  process.env.CLIENT_URL,
+  "https://aiweatherforecast.netlify.app/",
   "http://localhost:5173",
 ];
 
@@ -28,10 +28,14 @@ app.use(
   })
 );
 
+app.options("*", cors({
+  origin: allowedOrigins,
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+}));
+
 //middleware
 app.use(express.json());
-
-app.options("*", cors());
 
 //routes
 app.use("/", chatRoutes);
